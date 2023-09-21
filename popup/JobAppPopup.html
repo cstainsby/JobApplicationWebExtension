@@ -3,22 +3,48 @@
   <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="JobAppPopup.css" />
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.0/dist/cdn.min.js"></script>
   </head>
 
   <body>
     <div id="body-header">
         <button>Info</button>
         <h1>Job Application Helper</h1>
+        <button>Login</button>
     </div>
     <div id="popup-content">
         <button id="fill-form-btn">Read Page</button>
         <button type="reset">Reset</button>
-        <form>
 
+        <form action="/submit">
+            <label for="company-name">Company Name:</label>
+            <input type="text" name="company-name"/>
+
+            <label for="position-name">Position Name:</label>
+            <input type="text" name="position-name"/>
+
+            <label for="postion-id">Position ID:</label>
+            <input type="text" name="position-id"/>
+
+            <label for="posted-on-date">Posted On:</label>
+            <input type="date" name="posted-on-date"/>
+
+            <label for="applied-on-date">Applied On:</label>
+            <input type="date" name="applied-on-date"/>
+
+            <label for="locations">Locations:</label>
+            <button>Add</button>
+            <input type="text" name="company-name"/>
         </form>
-    </div>
 
-    <button class="submit-btn">Submit</button>
+        <div x-data="{ count: 0 }">
+            <button x-on:click="count++">Increment</button>
+         
+            <span x-text="count"></span>
+        </div>
+
+        <button class="submit-btn">Submit</button>
+    </div>
     <div id="error-content" class="hidden">
       <p>Can't beastify this web page.</p>
       <p>Try a different page.</p>
